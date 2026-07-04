@@ -2,9 +2,6 @@
 
 BrainDump is a modern, offline-first digital notebook web application built to recreate the realistic feel of a physical copybook, diary, or sketchbook directly inside the browser.
 
-> [!NOTE]
-> This project was built entirely for **learning and educational purposes** to explore building offline-first architectures, HTML5 canvas drawing engines, and secure full-stack synchronization.
-
 ---
 
 ## Key Features
