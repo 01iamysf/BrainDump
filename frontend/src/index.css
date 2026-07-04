@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Kalam:wght@300..700&family=Patrick+Hand&family=Architects+Daughter&family=Inter:wght@300..800&display=swap');
+
+@import "tailwindcss";
+
+@variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-brand-bg: #F8F6F2;
+  --color-brand-paper: #F4F0E6;
+  --color-brand-text: #222222;
+  --color-brand-secondary: #6B7280;
+  --color-brand-border: #E5E7EB;
+  --color-brand-accent: #D6C7AE;
+  --color-brand-success: #16A34A;
+  --color-brand-danger: #DC2626;
+
+  --color-brand-bg-dark: #1E1D1A;
+  --color-brand-paper-dark: #2E2D2A;
+  --color-brand-text-dark: #EAE6DF;
+  --color-brand-secondary-dark: #9E998F;
+  --color-brand-border-dark: #4E4B45;
+  --color-brand-accent-dark: #7A7263;
+
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-caveat: 'Caveat', cursive;
+  --font-kalam: 'Kalam', cursive;
+  --font-patrick: 'Patrick Hand', cursive;
+  --font-architect: 'Architects Daughter', cursive;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-accent);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-secondary);
+}
+
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-text);
+  font-family: var(--font-sans);
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.dark body {
+  background-color: var(--color-brand-bg-dark);
+  color: var(--color-brand-text-dark);
+}
+
+/* Spiral Rings Pattern */
+.spiral-binding {
+  background-image: 
+    radial-gradient(circle, #777 2px, transparent 3px),
+    radial-gradient(circle, #555 3px, transparent 4px),
+    linear-gradient(90deg, #ccc 0%, #aaa 30%, #888 70%, #bbb 100%);
+  background-position: 50% 10px, 50% 12px, 0 0;
+  background-repeat: repeat-y;
+}
+
+/* Notebook Page Styling */
+.notebook-page {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.dark .notebook-page {
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 8px 10px -6px rgba(0, 0, 0, 0.3);
+}
+
+/* Lined Paper Template */
+.paper-ruled {
+  background-image: linear-gradient(var(--color-brand-border) 1px, transparent 1px);
+  background-size: 100% 28px;
+  line-height: 28px;
+}
+
+.dark .paper-ruled {
+  background-image: linear-gradient(var(--color-brand-border-dark) 1px, transparent 1px);
+}
+
+/* Graph Paper Template */
+.paper-grid {
+  background-image: 
+    linear-gradient(var(--color-brand-border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-brand-border) 1px, transparent 1px);
+  background-size: 20px 20px, 20px 20px;
+}
+
+.dark .paper-grid {
+  background-image: 
+    linear-gradient(var(--color-brand-border-dark) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-brand-border-dark) 1px, transparent 1px);
+}
+
+/* Dotted Paper Template */
+.paper-dotted {
+  background-image: radial-gradient(var(--color-brand-secondary) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.dark .paper-dotted {
+  background-image: radial-gradient(var(--color-brand-secondary-dark) 1px, transparent 1px);
+}
+
+/* 3D Page Turn Animation */
+.page-container-perspective {
+  perspective: 2000px;
+}
+
+.page-flip-left {
+  animation: turnLeft 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  transform-origin: left center;
+  z-index: 50;
+}
+
+.page-flip-right {
+  animation: turnRight 0.6s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  transform-origin: left center;
+  z-index: 50;
+}
+
+@keyframes turnLeft {
+  0% {
+    transform: rotateY(0deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+  50% {
+    box-shadow: -10px 15px 30px rgba(0,0,0,0.15);
+  }
+  100% {
+    transform: rotateY(-180deg);
+    box-shadow: 0 0 5px rgba(0,0,0,0);
+    opacity: 0;
+  }
+}
+
+@keyframes turnRight {
+  0% {
+    transform: rotateY(-180deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateY(0deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+}
+
