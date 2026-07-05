@@ -3,7 +3,7 @@
 BrainDump is a modern, offline-first digital notebook web application built to recreate the realistic feel of a physical copybook, diary, or sketchbook directly inside the browser.
 
 ---
- 
+
 ## Key Features
 
 - **Realistic Notepad Workspace**: Styled A4 pages with left-edge spiral rings, soft shadows, and warm cream paper texturing to mimic real copy paper.
