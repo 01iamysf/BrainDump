@@ -4,7 +4,7 @@ BrainDump is a modern, offline-first digital notebook web application built to r
 
 ---
 
-## Key Features
+## Key Features 
 
 - **Realistic Notepad Workspace**: Styled A4 pages with left-edge spiral rings, soft shadows, and warm cream paper texturing to mimic real copy paper.
 - **Dynamic Paper Templates**: Support for ruled lines, dot grids, full grid patterns, and plain sheets.
